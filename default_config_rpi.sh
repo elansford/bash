@@ -9,9 +9,19 @@ apt install ufw
 apt install apache2
 
 #Set basic UFW rules to be customized per box needs in the future
+#I'm uing this box to host a webserver and an email server
+#Your needs may vary
 ufw allow 22 from 192.168.1.0/24
+ufw allow 25
 ufw allow 80
+ufw allow 110
+ufw allow 143
 ufw allow 443
+ufw allow 465
+ufw allow 587
+ufw allow 993
+ufw allow 995
+ufw allow 2525
 
 #Enable UFW
 ufw enable
