@@ -9,19 +9,24 @@ apt install ufw
 apt install apache2
 
 #Set basic UFW rules to be customized per box needs in the future
-#I'm uing this box to host a webserver and an email server
+#Replace $YOUR_LOCAL_SUBNET with the proper CIDR notation for your home network
+#Only TCP is allowed since none of the serivces use UDP under
+#the Principle of Least Privilege
+#I'm using this box to host a webserver and an email server
 #Your needs may vary
-ufw allow 22 from 192.168.1.0/24
-ufw allow 25
-ufw allow 80
-ufw allow 110
-ufw allow 143
-ufw allow 443
-ufw allow 465
-ufw allow 587
-ufw allow 993
-ufw allow 995
-ufw allow 2525
+
+sudo ufw allow proto tcp from $YOUR_LOCAL_SUBNET to any port 22
+sudo ufw allow proto tcp from any to any port 25
+sudo ufw allow proto tcp from any to any port 80
+sudo ufw allow proto tcp from any to any port 110
+sudo ufw allow proto tcp from any to any port 143
+sudo ufw allow proto tcp from any to any port 443
+sudo ufw allow proto tcp from any to any port 465
+sudo ufw allow proto tcp from any to any port 587
+sudo ufw allow proto tcp from any to any port 993
+sudo ufw allow proto tcp from any to any port 995
+sudo ufw allow proto tcp from any to any port 2525
+
 
 #Enable UFW
 ufw enable
