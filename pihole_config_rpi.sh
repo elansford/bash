@@ -21,7 +21,8 @@ sqlite3 /etc/pihole/gravity.db "INSERT INTO adlist (address, enabled, comment) V
 pihole -g
 
 #Set basic UFW rules to be customized per box needs in the future
-ufw allow 22 from 192.168.1.0/24
+#Replace $YOUR_LOCAL_SUBNET with your network information in CIDR notation
+sudo ufw allow proto tcp from $YOUR_LOCAL_SUBNET to any port 22
 ufw allow 53
 ufw allow 80
 ufw allow 443
