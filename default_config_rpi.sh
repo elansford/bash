@@ -7,11 +7,11 @@
 
 
 #Update existing software
-apt update && apt upgrade -y
-apt full-upgrade -y
+sudo apt update && sudo apt upgrade -y
+sudo apt full-upgrade -y
 
 #Install extra software
-apt install apache2
+sudo apt install apache2
 
 #Set basic UFW rules to be customized per box needs in the future
 #Only TCP is allowed since none of the serivces use UDP under
@@ -37,4 +37,4 @@ chown -R -f www-data:www-data /var/www/html
 chmod -R 774 /var/www/html
 
 #Start Apache2 web server
-systemctl start apache2
+sudo systemctl start apache2

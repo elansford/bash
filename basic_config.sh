@@ -1,13 +1,13 @@
 # !/bin/bash
 
 #Update existing software
-apt update && apt upgrade -y
-apt full-upgrade -y
+sudo apt update && apt upgrade -y
+sudo apt full-upgrade -y
 
 #Install extra software
-apt install ufw
-apt install openssh-server -y
-apt install curl
+sudo apt install ufw
+sudo apt install openssh-server -y
+sudo apt install curl
 
 #Set basic UFW rules to be customized per box needs in the future
 #Replace $YOUR_LOCAL_SUBNET with the proper CIDR notation for your home network
@@ -25,6 +25,6 @@ sudo ufw allow proto tcp from any to any port 8096
 sudo ufw allow proto tcp from any to any port 8920
 
 #Enable UFW and SSH
-systemctl enable ssh
-systemctl start ssh
-ufw enable
+sudo systemctl enable ssh
+sudo systemctl start ssh
+sudo ufw enable

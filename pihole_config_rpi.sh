@@ -5,8 +5,8 @@
 #and install Pi-hole
 
 #Update existing software
-apt update && apt upgrade -y
-apt full-upgrade -y
+sudo apt update && apt upgrade -y
+sudo apt full-upgrade -y
 
 #Install extra software
 curl -sSL https://install.pi-hole.net | bash
