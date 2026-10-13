@@ -2,9 +2,8 @@
 
 #This script is intended to be run to configure a web server and mail server
 #after running 'basic_config.sh' script. It will update the system,
-#install Apache2, and configure UFW firewall rules for a web server and
-#mail server.
-
+#install Apache2, PHP, mariadb and configure UFW firewall rules for a web 
+#server and mail server.
 
 #Update existing software
 sudo apt update && sudo apt upgrade -y
@@ -12,6 +11,8 @@ sudo apt full-upgrade -y
 
 #Install extra software
 sudo apt install apache2
+sudo apt install php libapache2-mod-php -y
+sudo apt install mariadb-server mariadb-client -y
 
 #Set basic UFW rules to be customized per box needs in the future
 #Only TCP is allowed since none of the serivces use UDP under
